@@ -22,4 +22,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EasyCashApp.Business\EasyCashApp.Business.csproj" />
+    <ProjectReference Include="..\EasyCashApp.DataAccess\EasyCashApp.DataAccess.csproj" />
+    <ProjectReference Include="..\EasyCashApp.Entity\EasyCashApp.Entity.csproj" />
+  </ItemGroup>
+
 </Project>
