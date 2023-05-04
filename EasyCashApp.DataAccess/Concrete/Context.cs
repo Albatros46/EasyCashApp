@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EasyCashApp.DataAccess.Concrete
 {
-    public class Context : IdentityDbContext
+    public class Context : IdentityDbContext<AppUser,AppRole,int>
     {
        
 
