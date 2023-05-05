@@ -7,4 +7,7 @@
         public decimal Amount { get; set; }
         public DateTime ProcessDate { get; set; } = DateTime.UtcNow;
     }
+    /*
+     ID-Islem Türü(Gelen Para, Giden Para(havale ve odemeler))-Miktar-Tarih- Alici- Gönderici
+     */
 }
