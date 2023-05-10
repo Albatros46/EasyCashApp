@@ -1,8 +1,13 @@
+using EasyCashApp.DataAccess.Concrete;
+using EasyCashApp.Entity.Concrete;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddDbContext<Context>();//Registration islemi gerceklestirmek icin services e eklendi
+builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -17,6 +22,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
