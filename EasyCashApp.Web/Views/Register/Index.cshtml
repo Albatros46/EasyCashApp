@@ -45,11 +45,14 @@
 			<input type="text" asp-for="Email" placeholder="E-Mail" required="">
 			<input type="password" asp-for="Password" placeholder="Password" required="">
 			<input type="password" asp-for="ConfirmPassword" placeholder="Confirm Password" required="">
+			<div class="text-white" asp-validation-summary="ModelOnly"></div><!--Register alaninda giris yapildiginda hatayi yakalayip kullaniciya göstermek icin.-->
+			<br />
+			<br />
 			<ul class="agileinfotickwthree">
 				<li>
 					<input type="checkbox" id="brand1" value="">
 					<label for="brand1"><span></span>Ich habe die Gebrauchsanweisung gelesen.</label>
-					<a href="#">Haben Sie ein Konto?</a>
+					<a href="/Login/Index">Haben Sie ein Konto?</a>
 				</li>
 			</ul>
 			<div class="aitssendbuttonw3ls">
