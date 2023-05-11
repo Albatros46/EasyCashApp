@@ -34,28 +34,32 @@
 <!-- Body -->
 <body>
 
-	<h1>EXISTING LOGIN FORM</h1>
+	<h1>Neukunde/Yeni Müsteri</h1>
 
 	<div class="w3layoutscontaineragileits">
 		<h2>Login here</h2>
-		<form action="#" method="post">
-			<input type="email" Name="Username" placeholder="EMAIL" required="">
-			<input type="password" Name="Password" placeholder="PASSWORD" required="">
+		<form  method="post">
+			<input type="text" asp-for="UserName" placeholder="Benutsename" required="">
+			<input type="text" asp-for="FirstName" placeholder="Vorname" required="">
+			<input type="text" asp-for="LastName" placeholder="Nachname" required="">
+			<input type="text" asp-for="Email" placeholder="E-Mail" required="">
+			<input type="password" asp-for="Password" placeholder="Password" required="">
+			<input type="password" asp-for="ConfirmPassword" placeholder="Confirm Password" required="">
 			<ul class="agileinfotickwthree">
 				<li>
 					<input type="checkbox" id="brand1" value="">
-					<label for="brand1"><span></span>Remember me</label>
-					<a href="#">Forgot password?</a>
+					<label for="brand1"><span></span>Ich habe die Gebrauchsanweisung gelesen.</label>
+					<a href="#">Haben Sie ein Konto?</a>
 				</li>
 			</ul>
 			<div class="aitssendbuttonw3ls">
-				<input type="submit" value="LOGIN">
-				<p> To register new account <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Click Here</a></p>
+				<input type="submit" value="Register">
+				<p> Zurück zur Hauptseite <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Eays Cash</a></p>
 				<div class="clear"></div>
 			</div>
 		</form>
 	</div>
-
+@*
 	<!-- for register popup -->
 	<div id="small-dialog1" class="mfp-hide">
 		<div class="contact-form1">
@@ -97,9 +101,9 @@
 		</div>
 	</div>
 	<!-- //for register popup -->
-
+*@
 	<div class="w3footeragile">
-		<p> &copy; 2023 isting Login Form. All Rights Reserved | Design by <a href="https://github.com/Albatros46/EasyCashApp" target="_blank">Albatros46</a></p>
+		<p> &copy; @DateTime.Now.Year isting Login Form. All Rights Reserved | Design by <a href="https://github.com/Albatros46/EasyCashApp" target="_blank">Albatros46</a></p>
 	</div>
 
 
