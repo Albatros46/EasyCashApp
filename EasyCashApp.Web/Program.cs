@@ -1,5 +1,6 @@
 using EasyCashApp.DataAccess.Concrete;
 using EasyCashApp.Entity.Concrete;
+using EasyCashApp.Web.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,15 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Context>();//Registration islemi gerceklestirmek icin services e eklendi
-builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>();
+builder.Services.AddIdentity<AppUser, AppRole>()
+	.AddEntityFrameworkStores<Context>()
+	.AddErrorDescriber<CustomIdentityValidator>();//EasyCashApp.Web.Models türkce hata mesajlarini burada tanitiyoruz
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+	app.UseExceptionHandler("/Home/Error");
+	// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+	app.UseHsts();
 }
 
 app.UseHttpsRedirection();
@@ -28,7 +31,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+	name: "default",
+	pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
