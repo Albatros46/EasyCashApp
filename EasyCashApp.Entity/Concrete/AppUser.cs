@@ -10,6 +10,7 @@ namespace EasyCashApp.Entity.Concrete
         public string Disctrict { get; set; }
         public string City { get; set; }
         public string ImageUrl { get; set; }
+        public int ConfirmCode { get; set; }//Mail e gonderilecek 6 haneli kod icin. Random bir sayi üretecek
         public List<CustomerAccount> CustomerAccounts { get; set; }//One to Many 
     }
 }
