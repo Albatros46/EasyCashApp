@@ -60,6 +60,7 @@ namespace EasyCashApp.Web.Controllers
                     client.Send(mineMessage);
                     client.Disconnect(true);
 
+                    TempData["Mail"]=appUserRegisterDto.Email;//TempData baska bir alana veri tasima yontemidir.
                     return RedirectToAction("Index","ConfirmMail");//Eger girilen mail dogru ise kontrol etmek icin 6 haneli sayi gonderip kontrol etmesini saglayacagiz
                 }
                 else
