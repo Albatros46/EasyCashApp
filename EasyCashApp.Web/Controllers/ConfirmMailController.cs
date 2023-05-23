@@ -29,6 +29,8 @@ namespace EasyCashApp.Web.Controllers
             var user = await _userManager.FindByEmailAsync(confirmMailViewModel.Mail.ToString());
             if (user.ConfirmCode==confirmMailViewModel.ConfirmCode)
             {
+                user.EmailConfirmed=true;//gelen kod dogru girilirse mail statusu onaylanmis olacak
+                await _userManager.UpdateAsync(user);
                 return RedirectToAction("Index", "MyProfile");//Kullanici kendi profil sayfasina yonlendirilecek MyProfileController-->Index.cshtml
             }
             return View();
