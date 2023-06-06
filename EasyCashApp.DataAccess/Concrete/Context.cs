@@ -11,8 +11,6 @@ namespace EasyCashApp.DataAccess.Concrete
 {
     public class Context : IdentityDbContext<AppUser,AppRole,int>
     {
-       
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {// Configuration kismini appsettings.json icerisinde de yazabiliriz.
             base.OnConfiguring(optionsBuilder);
