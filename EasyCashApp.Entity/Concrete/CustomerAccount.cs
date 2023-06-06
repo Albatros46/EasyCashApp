@@ -10,5 +10,7 @@
         public int AppUserId { get; set; }
         public AppUser AppUser { get; set; } //One To Many 
 
+        public List<CustomerAccountProcess> CustomerSender { get; set; }//HEsaptan para gonderildiginde tutulacak olan liste
+        public List<CustomerAccountProcess> CustomerReceiver { get; set; }//HEsaba para girisi oldugunda tutulacak olan liste
     }
 }
